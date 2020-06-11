@@ -12,8 +12,9 @@ from urllib.request import Request, urlopen
 from nltk import tokenize
 
 url = "https://towardsdatascience.com/web-scraping-with-python-a-to-copy-z-277a445d64c7"
+# url needs to be reiterated so have to make change here 
 
-req = Request(url, headers={'User-agent': 'Chrome/83.0.4103.61'})
+req = Request(url, headers={'User-agent': 'Chrome/83.0.4103.61'}) # take users chrome default version
 html = urlopen(req).read()
 soup = BeautifulSoup(html,"html.parser" )
 
@@ -100,9 +101,9 @@ def generate_text(markov_chain, words):
     return ' '.join(text)
 
 if __name__ == '__main__':
-    words = 100
+    words = 100                                 # change as per the need 
     tokens = tokenise_text_file(filename)
-    markov_chain = create_markov_chain(tokens, order=1)
+    markov_chain = create_markov_chain(tokens, order=1)     # need to modify order 
     print(generate_text(markov_chain, words))
 
 
